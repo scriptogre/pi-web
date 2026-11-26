@@ -259,7 +259,7 @@ export default {
   'sidebar.resizeScratchpad': 'Resize scratchpad sidebar',
 
   // ── Chat composer ──
-  'composer.placeholder': 'Continue this pi session…',
+  'composer.placeholder': 'Ask anything',
   'composer.send': 'Send',
   'composer.steer': 'Steer',
   'composer.queue': 'Queue',
