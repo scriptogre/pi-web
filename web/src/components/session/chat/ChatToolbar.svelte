@@ -3,6 +3,7 @@
   import { t } from '../../../shared/i18n.js';
   import { ChatToolbarState } from './chat-toolbar-state.svelte.js';
   import ContextUsage from './ContextUsage.svelte';
+  import Dictate from './Dictate.svelte';
 
   let { chatAvailable = true, toolbar = new ChatToolbarState(), modelLabel = '' } = $props();
 
@@ -64,6 +65,7 @@
       title={t('composer.queueHint')}
       disabled>{t('composer.queue')}</button
     >
+    <Dictate />
     <button type="submit" id="pi-chat-send" class="pi-chat-send" disabled
       >{toolbar.isRunning ? t('composer.steer') : t('composer.send')}</button
     >

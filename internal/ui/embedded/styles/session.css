@@ -4646,6 +4646,40 @@
       border-color: color-mix(in srgb, var(--accent) 90%, white);
     }
     .pi-chat-send:active:not(:disabled) { transform: translateY(1px); }
+
+    /* Dictation: covers the toolbar row while recording */
+    .pi-chat-toolbar {
+      position: relative;
+    }
+    .pi-dictate {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--input-bg);
+    }
+    .pi-dictate-wave {
+      flex: 1;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      overflow: hidden;
+    }
+    .pi-dictate-wave span {
+      width: 3px;
+      border-radius: 2px;
+      background: currentColor;
+      transition: height 0.08s;
+    }
+    .pi-dictate-keep {
+      color: var(--body-bg) !important;
+      background: var(--text) !important;
+      border-radius: 50% !important;
+    }
     .pi-chat-cancel { padding: 3px 9px; flex-shrink: 0; color: var(--warning); border-color: color-mix(in srgb, var(--warning) 55%, var(--dim)); }
     .pi-chat-queue { padding: 3px 9px; flex-shrink: 0; }
 
