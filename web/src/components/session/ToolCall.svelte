@@ -6,6 +6,7 @@
   // the `entry-<resultId>` anchor so annotations + scroll still work.
   import { shortenPath } from '../../session/render/session-format.js';
   import { getLanguageFromPath, str } from '../../session/render/entry-format.js';
+  import { formatShellCommand } from '../../session/render/shell-format.js';
   import ToolOutput, { toggleExpanded } from './ToolOutput.svelte';
   import AskQuestion from './AskQuestion.svelte';
 
@@ -54,8 +55,10 @@
   {#if call.name === 'bash'}
     {@const command = str(args.command)}
     <div class="tool-command">
-      $ {#if command === null}<span class="tool-error">[invalid arg]</span>{:else}{command ||
-          '...'}{/if}
+      $ {#if command === null}<span class="tool-error">[invalid arg]</span>{:else}<code
+          data-highlight-pending
+          data-lang="bash">{formatShellCommand(command) || '...'}</code
+        >{/if}
     </div>
     {#if result && resultText.trim()}<ToolOutput text={resultText.trim()} maxLines={5} />{/if}
   {:else if call.name === 'read'}
