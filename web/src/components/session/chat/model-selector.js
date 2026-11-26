@@ -173,6 +173,8 @@ export function setupModelSelector({
         return;
       }
       allModels = data.models;
+      // The popup may have opened before the list arrived.
+      if (popup?.style.display === 'flex') renderPopupList(popupSearch?.value || '');
       if (popup && popup.style.display !== 'none') {
         renderPopupList(popupSearch ? popupSearch.value : '');
       }

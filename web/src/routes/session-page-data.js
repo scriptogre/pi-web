@@ -76,7 +76,7 @@ export function buildSessionPageState({
   const header = data?.header || {};
   const cwd = header.cwd || '';
   const sessionUUID = data?.sessionUUID || data?.SessionUUID || header.id || '';
-  const title = data?.name || sessionId;
+  const title = data?.name || 'New chat';
   const leafId = newestLeaf(entries);
   const total = Number.isInteger(data?.total) ? data.total : entries.length;
   const from = Number.isInteger(data?.from) ? data.from : 0;
